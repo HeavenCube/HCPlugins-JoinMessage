@@ -30,8 +30,5 @@ tasks.processResources {
 }
 
 tasks.jar {
-    val buildDate = providers.gradleProperty("buildDate").orNull
-    val buildVersion = project.version.toString()
-    val fileVersion = if (buildDate == null) buildVersion else "$buildDate-b$buildVersion"
-    archiveFileName.set("HCJoinMessage-$fileVersion.jar")
+    archiveFileName.set("HCJoinMessage-${project.version}.jar")
 }
