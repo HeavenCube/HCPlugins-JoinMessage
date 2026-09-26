@@ -1,0 +1,21 @@
+name: HCJoinMessage
+version: "${version}"
+main: fr.noltox.hcplugins.customplayerjoinmessage.HCJoinMessage
+api-version: "26.2"
+description: Affiche des messages MiniMessage de connexion et de déconnexion selon les permissions du joueur.
+author: Noltox
+website: https://heavencube.fr/
+dependencies:
+  server:
+    HCCore:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    PlaceholderAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    PremiumVanish:
+      load: BEFORE
+      required: false
+      join-classpath: true

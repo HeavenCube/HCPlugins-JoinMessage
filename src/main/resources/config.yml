@@ -1,0 +1,19 @@
+## Messages utilisés lorsqu'aucun cosmétique de message n'est équipé.
+## PlaceholderAPI est résolu avant MiniMessage : les valeurs des placeholders
+## peuvent donc elles-mêmes contenir des tags MiniMessage.
+default-messages:
+  join: "<gray>Le joueur <white>%player_name%</white> s'est connecté au serveur.</gray>"
+  leave: "<gray>Le joueur <white>%player_name%</white> s'est déconnecté du serveur.</gray>"
+
+## Les entrées sont vérifiées dans cet ordre. Une seule permission cosmétique
+## doit normalement être équipée à la fois.
+custom-join-messages:
+  halloween-2026:
+    # Permission détectée automatiquement : hcplugins.joinmessage.cosmetic.halloween-2026
+    join: "<dark_purple>Le joueur maléfique %player_name% a rejoint le serveur.</dark_purple>"
+    leave: "<dark_purple>Le joueur maléfique %player_name% a quitté le serveur.</dark_purple>"
+
+  # Exemple de repli partiel : sans "leave", le message leave par défaut est utilisé.
+  # winter-2026:
+  #   # Permission détectée automatiquement : hcplugins.joinmessage.cosmetic.winter-2026
+  #   join: "<aqua>%player_name% arrive avec le froid.</aqua>"

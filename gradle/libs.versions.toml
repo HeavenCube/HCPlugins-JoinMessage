@@ -1,0 +1,12 @@
+[versions]
+paper = "26.2.build.+"
+shadow = "9.6.1"
+junit = "6.1.3"
+
+[libraries]
+paperApi = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
+junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
