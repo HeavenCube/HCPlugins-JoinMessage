@@ -11,7 +11,15 @@ dependencyResolutionManagement {
         mavenCentral()
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://repo.extendedclip.com/releases/")
-        maven("https://jitpack.io")
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "jitpack-premiumvanish"
+                    setUrl("https://jitpack.io")
+                }
+            }
+            filter { includeGroup("com.github.LeonMangler") }
+        }
     }
 }
 

@@ -10,7 +10,7 @@ import fr.noltox.hcplugins.customplayerjoinmessage.listener.JoinQuitListener;
 import fr.noltox.hcplugins.customplayerjoinmessage.listener.PremiumVanishListener;
 import fr.noltox.hcplugins.customplayerjoinmessage.message.JoinMessageService;
 import fr.noltox.hcplugins.customplayerjoinmessage.message.MessageRenderer;
-import fr.noltox.hcplugins.customplayerjoinmessage.support.DynamicPermissionRegistry;
+import fr.noltox.hcplugins.core.api.permission.DynamicPermissionRegistry;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;

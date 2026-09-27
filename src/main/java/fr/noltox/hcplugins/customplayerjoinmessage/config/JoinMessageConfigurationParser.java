@@ -1,6 +1,6 @@
 package fr.noltox.hcplugins.customplayerjoinmessage.config;
 
-import net.kyori.adventure.text.minimessage.MiniMessage;
+import fr.noltox.hcplugins.core.api.message.MiniMessages;
 import fr.noltox.hcplugins.customplayerjoinmessage.permission.Permissions;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -81,7 +81,7 @@ public final class JoinMessageConfigurationParser {
             throw new ConfigurationException("La clé '" + path + "' doit être une chaîne MiniMessage.");
         }
         try {
-            MiniMessage.builder().strict(true).build().deserialize(message);
+            MiniMessages.parseStrict(message);
         } catch (RuntimeException exception) {
             throw new ConfigurationException("Le MiniMessage de la clé '" + path + "' est invalide.", exception);
         }

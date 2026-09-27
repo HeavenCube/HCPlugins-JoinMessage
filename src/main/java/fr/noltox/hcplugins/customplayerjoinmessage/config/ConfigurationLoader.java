@@ -1,6 +1,6 @@
 package fr.noltox.hcplugins.customplayerjoinmessage.config;
 
-import fr.noltox.hcplugins.customplayerjoinmessage.support.BukkitYaml;
+import fr.noltox.hcplugins.core.api.config.BukkitYaml;
 
 import java.nio.file.Path;
 

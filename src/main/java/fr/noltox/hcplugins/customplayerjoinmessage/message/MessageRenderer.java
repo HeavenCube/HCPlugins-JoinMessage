@@ -2,7 +2,7 @@ package fr.noltox.hcplugins.customplayerjoinmessage.message;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
+import fr.noltox.hcplugins.core.api.message.MiniMessages;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -36,7 +36,7 @@ public final class MessageRenderer {
 
         try {
             String resolved = PlaceholderAPI.setPlaceholders(player, template);
-            return Optional.of(MiniMessage.miniMessage().deserialize(resolved));
+            return Optional.of(MiniMessages.parse(resolved));
         } catch (RuntimeException exception) {
             if (!failureLogged) {
                 logger.log(Level.SEVERE, exception, () -> "Impossible de résoudre les placeholders pour " + player.getName()
