@@ -1,6 +1,7 @@
 package fr.noltox.hcplugins.customplayerjoinmessage.command;
 
 import fr.noltox.hcplugins.customplayerjoinmessage.HCJoinMessage;
+import fr.noltox.hcplugins.core.api.HCPluginsCore;
 import fr.noltox.hcplugins.customplayerjoinmessage.config.JoinMessageConfiguration;
 import fr.noltox.hcplugins.customplayerjoinmessage.message.MessageRenderer;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
@@ -31,20 +32,17 @@ public final class PreviewCommand {
         this.messageRenderer = messageRenderer;
     }
 
-    private static void sendUsage(CommandSourceStack source) {
+    private void sendUsage(CommandSourceStack source) {
         if (isAuthorized(source)) {
             source.getSender().sendMessage(USAGE);
         }
     }
 
-    private static boolean isAuthorized(CommandSourceStack source) {
+    private boolean isAuthorized(CommandSourceStack source) {
         if (source.getSender().isOp()) {
             return true;
         }
-        source.getSender().sendMessage(Component.text(
-                "Cette commande est réservée aux opérateurs.",
-                NamedTextColor.RED
-        ));
+        source.getSender().sendMessage(HCPluginsCore.translations(plugin).operatorOnly());
         return false;
     }
 
