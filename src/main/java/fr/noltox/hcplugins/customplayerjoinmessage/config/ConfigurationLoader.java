@@ -5,14 +5,14 @@ import fr.noltox.hcplugins.core.api.config.BukkitYaml;
 import java.nio.file.Path;
 
 /**
- * Reads config.yml before it can replace the live configuration.
+ * Reads the shared HCJoinMessage.yml before it can replace the live configuration.
  */
 public final class ConfigurationLoader {
 
     private final Path configurationFile;
 
-    public ConfigurationLoader(Path dataDirectory) {
-        this.configurationFile = dataDirectory.resolve("config.yml");
+    public ConfigurationLoader(Path configurationFile) {
+        this.configurationFile = configurationFile;
     }
 
     public JoinMessageConfiguration load() throws ConfigurationException {

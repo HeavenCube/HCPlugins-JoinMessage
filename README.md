@@ -12,5 +12,8 @@ Cloner `HCPlugins-Core` à côté de ce dépôt, puis lancer `./gradlew build`.
 Le build compile l'API de Core depuis son code source ; HCCore et PlaceholderAPI
 restent requis sur le serveur.
 
+La configuration est `plugins/HCPlugins/HCJoinMessage.yml`. L'ancien fichier
+`plugins/HCJoinMessage/config.yml` n'est pas repris automatiquement.
+
 La CI utilise `HCPlugins-actions@main` et produit un JAR
 `HCJoinMessage-AAAA.MM.JJ-bN.jar` pour chaque release de `main`.

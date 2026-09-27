@@ -2,6 +2,7 @@ package fr.noltox.hcplugins.customplayerjoinmessage;
 
 import fr.noltox.hcplugins.core.api.HCPluginsCore;
 import fr.noltox.hcplugins.core.api.command.CoreCommandRegistration;
+import fr.noltox.hcplugins.core.api.config.HCPluginFiles;
 import fr.noltox.hcplugins.customplayerjoinmessage.command.ReloadCommand;
 import fr.noltox.hcplugins.customplayerjoinmessage.config.ConfigurationException;
 import fr.noltox.hcplugins.customplayerjoinmessage.config.ConfigurationLoader;
@@ -15,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Level;
@@ -34,8 +36,9 @@ public final class HCJoinMessage extends JavaPlugin {
             return;
         }
 
-        saveDefaultConfig();
-        configurationLoader = new ConfigurationLoader(getDataFolder().toPath());
+        Path configurationFile = HCPluginFiles.singleConfiguration(this);
+        HCPluginFiles.copyDefault(this, "config.yml", configurationFile);
+        configurationLoader = new ConfigurationLoader(configurationFile);
         cosmeticPermissions = new DynamicPermissionRegistry(
                 getServer().getPluginManager(),
                 getLogger(),
