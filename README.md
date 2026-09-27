@@ -2,6 +2,10 @@
 
 Plugin Paper de messages de connexion et de déconnexion de HeavenCube.
 
+**Licence :** code source consultable et contributions bienvenues, mais usage
+réservé aux serveurs HeavenCube. Toute réutilisation ou distribution exige une
+autorisation écrite préalable. Voir [LICENSE](LICENSE).
+
 ## Compilation locale
 
 Cloner `HCPlugins-Core` à côté de ce dépôt, puis lancer `./gradlew build`.
