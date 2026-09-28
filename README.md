@@ -17,3 +17,11 @@ La configuration est `plugins/HCPlugins/HCJoinMessage.yml`. L'ancien fichier
 
 La CI utilise `HCPlugins-actions@main` et produit un JAR
 `HCJoinMessage-AAAA.MM.JJ-bN.jar` pour chaque release de `main`.
+
+## Maintenance et documentation technique
+
+HCCore est obligatoire. Pour toute modification technique, commencer par [AGENTS.md](AGENTS.md),
+puis [le guide du plugin](docs/TECHNICAL.md) et le Core voisin.
+Le [guide commun](https://github.com/HeavenCube/HCPlugins-Core/blob/main/docs/ECOSYSTEM.md) décrit les conventions de toute la suite.
+`CLAUDE.md` et `GEMINI.md` renvoient aux mêmes instructions, sans copie des règles.
+Le catalogue commun `plugins/HCPlugins/translations.yml` se recharge par `/hcplugins core reload`.
