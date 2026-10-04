@@ -9,16 +9,21 @@ java {
 
 dependencies {
     compileOnly("fr.noltox.hcplugins:core-api")
-    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.+")
     compileOnly("me.clip:placeholderapi:2.12.3")
     compileOnly("com.github.LeonMangler:PremiumVanishAPI:2.9.18-2") {
         isTransitive = false
     }
+    testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
+    testImplementation("fr.noltox.hcplugins:core-api")
+    testImplementation("io.papermc.paper:paper-api:26.3.build.+")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.1.3")
 }
 
 tasks.withType<JavaCompile>().configureEach {
     options.release = 25
     options.encoding = "UTF-8"
+    options.compilerArgs.add("-Xlint:all")
 }
 
 tasks.processResources {
@@ -32,3 +37,5 @@ tasks.processResources {
 tasks.jar {
     archiveFileName.set("HCJoinMessage-${project.version}.jar")
 }
+
+tasks.test { useJUnitPlatform() }

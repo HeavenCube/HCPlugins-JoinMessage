@@ -1,5 +1,7 @@
 # HCPlugins-JoinMessage
 
+**Cible : Paper/Minecraft 26.3 exclusivement, Java 25.** Le build utilise `26.3.build.+`.
+
 **CI :** sources/ressources/build seulement ; docs seules sans runner. Pour les exceptions,
 voir [la politique CI et les marqueurs de skip](https://github.com/HeavenCube/HCPlugins-actions/blob/main/docs/CI_COSTS.md).
 
@@ -18,8 +20,8 @@ restent requis sur le serveur.
 La configuration est `plugins/HCPlugins/HCJoinMessage.yml`. L'ancien fichier
 `plugins/HCJoinMessage/config.yml` n'est pas repris automatiquement.
 
-La CI utilise `HCPlugins-actions@main` et produit un JAR
-`HCJoinMessage-AAAA.MM.JJ-bN.jar` pour chaque release de `main`.
+La CI utilise `HCPlugins-actions@main` et produit `HCJoinMessage-AAAA.MM.JJ-bN.jar`.
+La release de `main` joint sa copie à nom fixe `HCJoinMessage.jar`, avec la même version interne.
 
 ## Liens importants
 

@@ -36,11 +36,13 @@ public final class MessageRenderer {
 
         try {
             String resolved = PlaceholderAPI.setPlaceholders(player, template);
-            return Optional.of(MiniMessages.parse(resolved));
+            Component rendered = MiniMessages.parse(resolved);
+            failureLogged = false;
+            return Optional.of(rendered);
         } catch (RuntimeException exception) {
             if (!failureLogged) {
                 logger.log(Level.SEVERE, exception, () -> "Impossible de résoudre les placeholders pour " + player.getName()
-                        + " : le rendu est ignoré. Cette erreur ne sera plus répétée.");
+                        + " : le rendu est ignoré. Les erreurs sont regroupées jusqu'au prochain rendu réussi.");
                 failureLogged = true;
             }
             return Optional.empty();

@@ -2,6 +2,9 @@
 
 ## Point d’entrée
 
+Cible : Paper 26.3 (`26.3.build.+`), Java 25 sans preview. Compilation avec `-Xlint:all` ;
+examiner les warnings avant de les attribuer au plugin ou à une dépendance.
+
 Ce dépôt appartient à la suite privée d’usage HeavenCube, publiée comme source consultable.
 Il dépend obligatoirement de HCCore. Lire d’abord [AGENTS.md](../AGENTS.md), puis le Core voisin.
 Le [guide commun](https://github.com/HeavenCube/HCPlugins-Core/blob/main/docs/ECOSYSTEM.md) décrit les règles Java/Paper, les contrats Core,
@@ -77,7 +80,9 @@ thread réel, puis revalider le contexte avant mutation.
 
 ## Validation et limites
 
-Pas de suite de tests Java dans ce dépôt actuellement ; `build` valide compilation/packaging, pas le rendu des messages. En jeu : join/quit, plusieurs permissions, placeholder valide/invalide, preview default avec cible, console, vanish actif/inactif et reload invalide.
+`JoinMessageConfigurationParserTest` couvre priorité, fallback leave, permissions, YAML mal typé et MiniMessage invalide.
+Les logs de rendu sont regroupés pendant un échec continu puis réarmés après un rendu réussi.
+En jeu : join/quit, plusieurs permissions, placeholder valide/invalide, preview default avec cible, console, vanish actif/inactif et reload invalide.
 
 Les placeholders et événements PremiumVanish doivent être vérifiés avec les plugins installés. Le traitement Preview n’est pas une diffusion publique.
 
